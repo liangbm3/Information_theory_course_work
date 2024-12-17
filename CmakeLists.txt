@@ -1,0 +1,28 @@
+# 最低 CMake 版本要求
+cmake_minimum_required(VERSION 3.10)
+
+# 项目名称
+project(Information_theory_course_work)
+
+# 设置 C++ 编译标准
+set(CMAKE_CXX_STANDARD 17)
+set(CMAKE_CXX_STANDARD_REQUIRED ON)
+
+
+
+# 查找当前目录下的所有 .cpp 文件，并将它们作为源文件
+file(GLOB SOURCES "src/*.c")
+
+# 添加可执行文件
+add_executable(Information_theory_course_work ${SOURCES})
+
+# 添加 include 目录
+# include_directories(${CMAKE_SOURCE_DIR}/include)
+target_include_directories(Information_theory_course_work PRIVATE ${CMAKE_SOURCE_DIR}/include)
+
+# 如果需要链接外部库，可以使用以下命令
+# target_link_libraries(Information_theory_course_work some_library)
+
+# 设置编译选项（可选）
+# set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wall -Wextra")
+
